@@ -1,0 +1,32 @@
+//Faça um algoritmo para ler N números inteiros e ao final escrever sua
+//média.O valor de N será informado pelo usuário.
+
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <conio.h>
+#include <ctype.h>
+#include <stdbool.h>
+
+
+int i, n, soma = 0, n1;
+float media;
+
+int main() {
+	printf("\nValor de N: ");
+	scanf_s("%i", &n);
+
+	for (i = 1; i <= n; i++) 
+	{
+		printf("\nNumero a ser lido: ");
+		scanf_s("%i", &n1);
+
+		soma = soma + n1;
+		media = soma / i;
+	}
+
+
+	printf("\nA media dos valores e: %.2f", media);
+}
