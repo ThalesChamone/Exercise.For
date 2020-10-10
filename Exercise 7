@@ -1,0 +1,82 @@
+//Escreva um algoritmo que leia um conjunto de 50 registros contendo, cada
+//uma delas, a altura e o sexo de uma pessoa, calcule e mostre o seguinte :
+//a) a maior e a menor altura da turma 
+//b) a média da altura das mulheres
+//c) a média da altura da turma.    
+//d) A maior e a menor altura dos homens 
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <conio.h>
+#include <ctype.h>
+#include <stdbool.h>
+
+int i;
+char sexo;
+float mediaAltura, altura, somaAltura = 0, maiorAltura = 0;
+float menorAltura = 999, maiorAlturaM = 0, menorAlturaM = 999, mediaAlturaMulheres, somaAlturaMulheres = 0,quantF = 0;
+
+
+
+int main() {
+	for (i = 1; i <= 4; i++)
+	{
+		printf("\nDigite seu sexo F ou M: ");
+		scanf_s("%c", &sexo,1);
+		sexo = toupper(sexo);
+		(void)getchar();
+
+		printf("\nDigite sua altura: ");
+		scanf_s("%f", &altura);
+		(void)getchar();
+
+		
+		
+		somaAltura = somaAltura + altura;
+
+		mediaAltura = somaAltura / i;
+
+		if (altura > maiorAltura) 
+		{
+			maiorAltura = altura;
+		}
+		if (altura < menorAltura) 
+		{
+			menorAltura = altura;
+		}
+
+		if (sexo == 'M' && altura > maiorAlturaM) 
+		{
+			maiorAlturaM = altura;
+		}
+		if (sexo == 'M' && altura < menorAlturaM) 
+		{
+			menorAlturaM = altura;
+		}
+		
+		if (sexo == 'F') 
+		{
+			quantF++;
+			somaAlturaMulheres = somaAlturaMulheres + altura;
+		}
+
+		
+		mediaAlturaMulheres = somaAlturaMulheres / quantF;
+		
+		
+		
+	
+
+			
+	}
+	
+	
+	printf("\nMedia altura turma e: %.2f", mediaAltura);
+	printf("\n\nMaior altura e: %.2f", maiorAltura);
+	printf("\n\nMenor altura e: %.2f", menorAltura);
+	printf("\n\nMaior altura M e: %.2f", maiorAlturaM);
+	printf("\n\nMenor altura M e: %.2f", menorAlturaM);
+	printf("\n\nMedia altura mulheres e: %.2f\n", mediaAlturaMulheres);
+}
