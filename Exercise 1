@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <conio.h>
+#include <stdlib.h>
+
+
+int i;
+float media,n1 = 0, soma = 0;
+
+
+int main() {
+
+    for (i = 0; i <= 10; i++) 
+    {
+        printf("Digite numeros inteiros: ");
+        scanf_s("%f", &n1);
+
+
+        if (n1 < 0) 
+        {
+            printf("Numero menor que 0: ");
+            break;
+
+        }
+        
+        soma = soma + n1;
+
+        
+    }
+    media = soma / i;
+    printf("\nA m%cdia %c: %.2f", 130, 130, media);
+}
