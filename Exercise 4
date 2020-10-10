@@ -1,0 +1,36 @@
+//Escreva um algoritmo que leia um número N que indica quantos valores
+//devem ser lidos a seguir.Para cada número lido mostre como resultado o
+//valor lido e o fatorial deste valor.
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <conio.h>
+#include <ctype.h>
+#include <stdbool.h>
+
+
+int i, n1, fat, N;
+
+int main() {
+
+	printf("\nDigite valor de N: ");
+	scanf_s("%i", &N);
+
+	for (i = 1; i = N; i++) 
+	{
+		printf("\n\nFatorial sera repetido: %i vezes", N--);
+		printf("\n\nNumero a ser lido: ");
+		scanf_s("%i", &n1);
+
+		for (fat = 1; n1 > 1; n1--) 
+		{
+			fat = fat * n1;
+
+			printf("\nFatorial calculado: %d", fat);
+		}
+	}
+
+
+}
