@@ -1,0 +1,32 @@
+//Uma empresa com X funcionários precisa saber a média de seus salários.
+//Faça um algoritmo para ler a quantidade de funcionários e o salário de cada
+//um e escrever a média dos salários.
+
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <conio.h>
+#include <ctype.h>
+#include <stdbool.h>
+
+int N, soma = 0, i, n1;
+float media;
+
+int main() {
+	printf("Numero de funcionarios: ");
+	scanf_s("%i", &N);
+
+	for (i = 0; i < N; i++) 
+	{
+		printf("\nSalario do Funcionario: ");
+		scanf_s("%i", &n1);
+
+		soma = soma + n1;
+
+	}
+	media = soma / i;
+
+	printf("Media salario dos funcionarios e: %.2f", media);
+}
