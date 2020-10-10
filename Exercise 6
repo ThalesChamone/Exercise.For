@@ -1,0 +1,62 @@
+//Escreva um algoritmo para ler o primeiro nome, o sobrenome e o ano de
+//nascimento de 5 pessoas.Escrever o nome completo e a idade da terceira
+//pessoa, calcular e escrever a soma das cinco idades lidas.
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <conio.h>
+#include <ctype.h>
+#include <stdbool.h>
+
+int anoNAS, idade, somaIdade = 0, i, idade3;
+char nome[30], sobrenome[30], primeironome[30], segundonome[30];
+
+
+int main() {
+	for (i = 1; i <= 4; i++) 
+	{
+
+
+		printf("\nDigite seu nome e sobrenome: ");
+		scanf_s("%[^\n]s %[^\n]s", &nome, 30, &sobrenome, 30);
+		(void)getchar();
+		printf("\nDigite seu ano de nascimento: ");
+		scanf_s("%i", &anoNAS);
+		(void)getchar();
+		printf("\nDigite sua idade: ");
+		scanf_s("%i", &idade);
+		(void)getchar();
+		
+		
+
+			somaIdade = somaIdade + idade;
+
+			if (i == 3)
+			{
+				primeironome[30] = strcpy_s(primeironome, 29, nome);
+
+				if (i == 3) 
+				{
+					segundonome[30] = strcpy_s(segundonome, 29, sobrenome);
+				}
+
+				if (i == 3) 
+				{
+					idade3 = idade;
+				}
+			}
+		
+	}
+
+	
+	
+	
+	
+	printf("\nSoma das idades %c: %.2i",130, somaIdade);
+	printf("\nO nome da 3 pessoa e %s %s e sua idade e %i anos\n", primeironome, segundonome, idade3);
+	
+
+	
+}
