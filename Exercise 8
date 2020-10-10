@@ -1,0 +1,25 @@
+//Escreva um algoritmo para calcular N!.
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <conio.h>
+#include <ctype.h>
+#include <stdbool.h>
+
+int i, n1, fat;
+
+
+int main() {
+
+	printf("\nDigite um numero para saber seu fatorial:");
+	scanf_s("%i",&n1);
+		
+	for (fat = 1; n1 > 1; n1--)
+	{
+		fat = fat * n1;
+
+		printf("\nFatorial calculado: %d", fat);
+	}
+}
