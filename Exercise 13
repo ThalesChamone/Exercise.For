@@ -1,0 +1,33 @@
+//Uma turma possui N alunos, e para cada aluno tem - se uma média para cada
+//disciplina.O professor de Matemática precisa saber a média geral de sua
+//disciplina em uma turma.Faça um algoritmo para auxiliar a encontrar este
+//valor.
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <conio.h>
+#include <ctype.h>
+#include <stdbool.h>
+
+
+int i, N, soma = 0, n1;
+float media;
+
+
+int main() {
+	printf("\nDigite valor de N: ");
+	scanf_s("%i", &N);
+
+	for (i = 0; i < N; i++) 
+	{
+		printf("\nNotas alunos: ");
+		scanf_s("%i", &n1);
+
+		soma = soma + n1;
+
+	}
+
+	media = soma / i;
+	printf("\nA media das notas dos alunos e: %.2f\n", media);
+}
