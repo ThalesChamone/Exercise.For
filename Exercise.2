@@ -1,0 +1,120 @@
+//Escreva um algoritmo que leia o nome, idade e sexo de 10000 pessoas
+//finalizando a digitação quando o nome for igual a espaço.Mostrar o total de
+//pessoas digitadas, o percentual de homens e de mulheres, a média de idade
+//e o nome e idade da pessoa mais velha e da pessoa mais nova.
+
+
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <conio.h>
+#include <ctype.h>
+#include <stdbool.h>
+
+int i, idade;
+char sexo, nome[20], nomeNovo[30], nomeVelho[30];
+float mediaIdade, somaIdade = 0, maisNovo = 999, maisVelho = 0, porcentM = 0, porcentF = 0;
+bool nomeincorreto;
+
+
+
+
+int main() {
+	for (i =0; i <3 ; i++) {
+
+		fflush(stdin);
+		printf("\nDigite seu nome: ");
+		scanf_s("%[^\n]s%", nome, 20); //---> [^\n] ignorar espaços
+		(void)getchar();
+
+		if (nome[0] == 32) {
+			break;
+		}
+
+		fflush(stdin);
+		printf("\nDigite o sexo F ou M: ");
+		scanf_s("%c", &sexo,1);
+		sexo = toupper(sexo);
+		(void)getchar();
+		
+		
+
+		printf("\nDigite sua idade: ");
+		scanf_s("%i", &idade);
+		(void)getchar();
+		somaIdade = somaIdade + idade;
+	
+		
+
+
+		if (idade > maisVelho) 
+		{
+			maisVelho = idade;
+			if (maisVelho) 
+			{
+				nomeVelho[30] = strcpy_s(nomeVelho,30, nome);
+			}
+
+			
+		}
+		if (idade < maisNovo) 
+		{
+			maisNovo = idade;
+			if (maisNovo) 
+			{
+				nomeNovo[30] = strcpy_s(nomeNovo,30, nome);
+			}
+		}
+		if (sexo == 'M') 
+		{
+			porcentM++;
+		}
+		if (sexo == 'F') 
+		{
+			porcentF++;
+		}
+
+		
+		
+		
+	}
+
+
+	if (!i) {
+		printf("\n######################################################");
+		printf("\n################ PROGRAMA FINALIZADO #################");
+		printf("\n######################################################\n\n\n");
+		system("color fc");
+
+
+	}
+	else {
+		porcentM = (porcentM / i) * 100;
+		porcentF = (porcentF / i) * 100;
+
+		mediaIdade = somaIdade / i;
+
+
+
+
+		system("cls");
+		system("color 27");
+		printf("\n######################################################");
+		printf("\n################ ---- RESULTADO ---- #################");
+		printf("\n######################################################\n");
+		printf("\nM%cdia das idades %c: %.2f", 130, 130, mediaIdade);
+		printf("\n Nome mais velho: %s", nomeVelho);
+		printf("\n Nome mais novo: %s", nomeNovo);
+		printf("\nIdade mais velho: %.0f", maisVelho);
+		printf("\nIdade mais novo: %.0f", maisNovo);
+		printf("\nPorcentagem M: %.2f%%", porcentM);
+		printf("\nPorcentagem F: %.2f%%", porcentF);
+		printf("\nTotal Pessoas: %.0i\n", i);
+	}
+
+	
+
+
+}
